@@ -10,21 +10,22 @@
     function getSpreadsheet() {
       var deferred = $q.defer();
       $http.get(endpoint).then(function(response){
-        var rows = massageRowsData(response.data.feed.entry);
+        var rows = massageData(response.data.feed.entry);
         deferred.resolve(rows);
       });
       return deferred.promise;
     }
 
-    function massageRowsData(rowsData) {
-      var rows = rowsData.map(function(currentRowData){
-        var stringifiedRow = currentRowData.content.$t;
-        return stringifiedRow.split(",").map(function(stringifiedCell){
-          var cellContentIndex = stringifiedCell.indexOf(":")+2;
-          return stringifiedCell.substr(cellContentIndex)
-        });
-      });
-      return rows;
+    function massageData(rowsData) {
+      return rowsData.map(massageRow);
+    }
+    function massageCell(stringifiedCell) {
+      var cellContentIndex = stringifiedCell.indexOf(":")+2;
+      return stringifiedCell.substr(cellContentIndex)
+    }
+    function massageRow(currentRowData) {
+      var stringifiedRow = currentRowData.content.$t;
+      return stringifiedRow.split(",").map(massageCell);
     }
 
     return {
