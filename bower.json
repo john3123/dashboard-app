@@ -1,0 +1,22 @@
+{
+  "name": "DashboardApp",
+  "homepage": "https://github.com/john3123/drive-research",
+  "authors": [
+    "Carl <john3123@msu.edu>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-chart.js": "^0.8.8",
+    "angular-ui-router": "^0.2.18"
+  }
+}
