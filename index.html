@@ -1,0 +1,38 @@
+<html ng-app="DashboardApp">
+  <head>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
+    <script type="text/javascript">
+      // var spreadsheet = 'https://spreadsheets.google.com/feeds/cells/1LQfZajYdgp5HNbnHhWy91YrBbnuMBIv8ZHIhhcCoHsM/od6/public/values?alt=json';
+      // $.get(spreadsheet).done(printToDOM);
+      //
+      // function printToDOM(data) {
+      //   var html = "";
+      //   console.log(data);
+      //   data.feed.entry.forEach(function(currentEntry){
+      //     html+= "<div>" + currentEntry.content.$t + "</div>";
+      //   });
+      //   $("body").append(html);
+      // }
+    </script>
+  </head>
+  <body>
+    <ui-view></ui-view>
+  </body>
+  <!-- dependencies  -->
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="bower_components/Chart.js/Chart.min.js"></script>
+  <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+
+  <!-- services -->
+  <script src="services/spreadsheetService/spreadsheet.service.js"></script>
+
+  <!-- modules -->
+  <script src="modules/main/main.router.js"></script>
+  <script src="modules/main/main.controller.js"></script>
+
+  <!-- config -->
+  <script src="config/app.js"></script>
+  <script src="config/app.config.js"></script>
+</html>
