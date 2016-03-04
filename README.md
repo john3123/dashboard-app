@@ -1,5 +1,6 @@
 #How to run
 
+0. clone this repo
 1. bower install
 2. start a server
   * python -m SimpleHTTPServer 8000
